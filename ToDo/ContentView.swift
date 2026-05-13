@@ -13,9 +13,19 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("Your To Dos")
         }
         .padding()
+        List {
+            
+            Day(dayName: "MONDAY")
+            Day(dayName: "TUESDAY")
+            Day(dayName: "WEDNESDAY")
+            Day(dayName: "THURSDAY")
+            Day(dayName: "FRIDAY")
+            Day(dayName: "SATURDAY")
+            Day(dayName: "SUNDAY")
+            }
     }
 }
 
