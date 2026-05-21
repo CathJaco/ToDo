@@ -9,17 +9,19 @@ import SwiftUI
 
 struct Day: View {
     var dayName: String
-    @State var tasks: [String] = ["tekst", "noe nytt"]
+    @State var tasks: [Task] = []
+    @State var id = 0
     
     var body: some View {
         GroupBox(label:
                 Label(dayName, systemImage: "heart")
         ) {
-            List(tasks, id: \.self) { task in
-                Text(task)
+            List(tasks) { task in
+                task
             }
             Button("Add", systemImage: "plus", action: {
-                tasks.append("hæ")
+                tasks.append(Task())
+                id = id + 1
             })
                 .labelStyle(.iconOnly)
             

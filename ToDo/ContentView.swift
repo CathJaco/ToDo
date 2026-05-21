@@ -17,7 +17,6 @@ struct ContentView: View {
         }
         .padding()
         List {
-            
             Day(dayName: "MONDAY")
             Day(dayName: "TUESDAY")
             Day(dayName: "WEDNESDAY")
@@ -32,3 +31,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
