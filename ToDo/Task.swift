@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Task: View, Identifiable {
-    var id = ""
+    var id: Int
     @State private var username: String = ""
     
     var body: some View {
@@ -20,5 +20,5 @@ struct Task: View, Identifiable {
 }
 
 #Preview {
-    Task()
+    Task(id: 0)
 }

@@ -20,7 +20,7 @@ struct Day: View {
                 task
             }
             Button("Add", systemImage: "plus", action: {
-                tasks.append(Task())
+                tasks.append(Task(id: id))
                 id = id + 1
             })
                 .labelStyle(.iconOnly)

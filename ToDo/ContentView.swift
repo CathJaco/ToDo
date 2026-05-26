@@ -9,12 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        HStack {
             Image(systemName: "heart")
                 .imageScale(.large)
-                .foregroundStyle(.tint)
+                .foregroundStyle(.brown)
             Text("Your To Dos")
+                .foregroundStyle(.brown)
         }
+        .padding()
         .padding()
         List {
             Day(dayName: "MONDAY")
