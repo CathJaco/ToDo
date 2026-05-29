@@ -13,9 +13,10 @@ struct Day: View {
     @State var id = 0
     
     var body: some View {
-        GroupBox(label:
-                Label(dayName, systemImage: "heart")
-        ) {
+        VStack() {
+            
+            Label(dayName, systemImage: "heart")
+
             VStack {
                 ForEach(tasks) { task in
                     task
@@ -28,11 +29,13 @@ struct Day: View {
                 .labelStyle(.iconOnly)
             
         }
+        .padding()
+        .background(Color(red: 0.3, green: 0.75, blue: 0.7) .opacity(0.3))
     }
 
 }
 
 #Preview {
-    Day(dayName: "MONDAY")
+    ContentView()
 }
 
