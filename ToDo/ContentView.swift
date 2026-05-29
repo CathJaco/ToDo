@@ -18,15 +18,17 @@ struct ContentView: View {
         }
         .padding()
         .padding()
-        List {
-            Day(dayName: "MONDAY")
-            Day(dayName: "TUESDAY")
-            Day(dayName: "WEDNESDAY")
-            Day(dayName: "THURSDAY")
-            Day(dayName: "FRIDAY")
-            Day(dayName: "SATURDAY")
-            Day(dayName: "SUNDAY")
+        ScrollView {
+            VStack {
+                Day(dayName: "MONDAY")
+                Day(dayName: "TUESDAY")
+                Day(dayName: "WEDNESDAY")
+                Day(dayName: "THURSDAY")
+                Day(dayName: "FRIDAY")
+                Day(dayName: "SATURDAY")
+                Day(dayName: "SUNDAY")
             }
+        }
     }
 }
 

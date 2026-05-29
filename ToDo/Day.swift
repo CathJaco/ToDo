@@ -16,13 +16,15 @@ struct Day: View {
         GroupBox(label:
                 Label(dayName, systemImage: "heart")
         ) {
-            List(tasks) { task in
-                task
+            VStack {
+                ForEach(tasks) { task in
+                    task
+                }
             }
-            Button("Add", systemImage: "plus", action: {
+            Button("Add", systemImage: "plus") {
                 tasks.append(Task(id: id))
                 id = id + 1
-            })
+            }
                 .labelStyle(.iconOnly)
             
         }
