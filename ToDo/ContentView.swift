@@ -12,12 +12,17 @@ struct ContentView: View {
         HStack {
             Image(systemName: "heart")
                 .imageScale(.large)
-                .foregroundStyle(.brown)
-            Text("Your To Dos")
-                .foregroundStyle(.brown)
+                .foregroundStyle(Color(red: 0.6, green: 0.2, blue: 0.0))
+            Text("Out of mind")
+                .foregroundStyle(Color(red: 0.6, green: 0.2, blue: 0.0))
+                .font(.custom("noteworthy", size: 24))
+                .fontWeight(.bold)
+            Image(systemName: "heart")
+                .imageScale(.large)
+                .foregroundStyle(Color(red: 0.6, green: 0.2, blue: 0.0))
         }
         .padding()
-        .padding()
+        
         ScrollView {
             VStack {
                 Day(dayName: "MONDAY")
