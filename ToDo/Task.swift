@@ -9,16 +9,16 @@ import SwiftUI
 
 struct Task: View, Identifiable {
     var id: Int
-    @State private var username: String = ""
+    @State private var item: String = ""
     
     var body: some View {
         TextField(
-            "Add",
-            text: $username
+            "",
+            text: $item
         )
     }
 }
 
 #Preview {
-    Task(id: 0)
+    ContentView()
 }

@@ -12,16 +12,14 @@ struct ContentView: View {
         HStack {
             Image(systemName: "heart")
                 .imageScale(.large)
-                .foregroundStyle(Color(red: 0.6, green: 0.2, blue: 0.0))
             Text("Out of mind")
-                .foregroundStyle(Color(red: 0.6, green: 0.2, blue: 0.0))
                 .font(.custom("noteworthy", size: 24))
                 .fontWeight(.bold)
             Image(systemName: "heart")
                 .imageScale(.large)
-                .foregroundStyle(Color(red: 0.6, green: 0.2, blue: 0.0))
         }
         .padding()
+        .foregroundStyle(Color(red: 0.6, green: 0.2, blue: 0.0))
         
         ScrollView {
             VStack {

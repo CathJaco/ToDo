@@ -17,7 +17,7 @@ struct Day: View {
             
             Label(dayName,  systemImage: "heart")
                 .foregroundStyle(Color(red: 0.6, green: 0.2, blue: 0.0))
-                .font(.custom("noteworthy", size: 14))
+                .font(.custom("noteworthy", size: 16))
             VStack {
                 ForEach(tasks) { task in
                     task
@@ -27,9 +27,9 @@ struct Day: View {
                 tasks.append(Task(id: id))
                 id = id + 1
             }
-                .labelStyle(.iconOnly)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundStyle(Color(red: 0.9, green: 0.5, blue: 0.3))
+            .labelStyle(.iconOnly)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .foregroundStyle(Color(red: 0.9, green: 0.5, blue: 0.3))
         }
         .padding()
         .frame(maxWidth: .infinity)
