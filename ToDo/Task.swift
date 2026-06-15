@@ -10,12 +10,18 @@ import SwiftUI
 struct Task: View, Identifiable {
     var id: Int
     @State private var item: String = ""
+    @State private var toggle: Bool = false
     
     var body: some View {
-        TextField(
-            "",
-            text: $item
-        )
+        HStack() {
+            Toggle("O", isOn: $toggle)
+                .toggleStyle(.button)
+                .padding(-10)
+            TextField(
+                "",
+                text: $item
+            )
+        }
     }
 }
 

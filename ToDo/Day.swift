@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Day: View {
     var dayName: String
-    @State var tasks: [Task] = []
+    @State var tasks: [Task] = [] //Task(id: 0)
     @State var id = 0
     
     var body: some View {

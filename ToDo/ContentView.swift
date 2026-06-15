@@ -30,6 +30,7 @@ struct ContentView: View {
                 Day(dayName: "F R I D A Y")
                 Day(dayName: "S A T U R D A Y")
                 Day(dayName: "S U N D A Y")
+                Day(dayName: "F U T U R E")
             }
         }
     }
