@@ -25,8 +25,10 @@ struct Day: View {
                 }
             }
             Button("Add", systemImage: "plus") {
-                tasks.append(Task(id: id))
+                let newTask = Task(id: id)
+                tasks.append(newTask)
                 id = id + 1
+                
             }
             .labelStyle(.iconOnly)
             .frame(maxWidth: .infinity, alignment: .leading)

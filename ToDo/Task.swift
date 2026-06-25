@@ -11,6 +11,7 @@ struct Task: View, Identifiable {
     var id: Int
     @State private var item: String = ""
     @State private var toggle: Bool = false
+    @FocusState private var isFocused: Bool
     
     var body: some View {
         HStack() {
@@ -20,7 +21,11 @@ struct Task: View, Identifiable {
             TextField(
                 "",
                 text: $item
-            )
+                
+            ) .focused($isFocused)
+                .onAppear {
+                    isFocused = true
+                }
         }
     }
 }
