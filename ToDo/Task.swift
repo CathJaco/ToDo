@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Task: View, Identifiable {
     var id: Int
+    var onSubmit: () -> Void
+    
     @State private var item: String = ""
     @State private var toggle: Bool = false
     @FocusState private var isFocused: Bool
@@ -25,6 +27,9 @@ struct Task: View, Identifiable {
             ) .focused($isFocused)
                 .onAppear {
                     isFocused = true
+                }
+                .onSubmit {
+                    self.onSubmit() //referer til noe et annet sted
                 }
         }
     }

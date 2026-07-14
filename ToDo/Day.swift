@@ -24,12 +24,7 @@ struct Day: View {
                     task
                 }
             }
-            Button("Add", systemImage: "plus") {
-                let newTask = Task(id: id)
-                tasks.append(newTask)
-                id = id + 1
-                
-            }
+            Button("Add", systemImage: "plus", action: addTask)
             .labelStyle(.iconOnly)
             .frame(maxWidth: .infinity, alignment: .leading)
             .foregroundStyle(Color(red: 1.0, green: 1.0, blue: 1.0))
@@ -38,7 +33,11 @@ struct Day: View {
         .frame(maxWidth: .infinity)
         .background(Color(red: 0.9, green: 0.5, blue: 0.3) .opacity(0.3))
     }
-
+    func addTask(){
+        let newTask = Task(id: self.id, onSubmit: addTask)
+        tasks.append(newTask)
+        id = id + 1
+    }
 }
 
 #Preview {
