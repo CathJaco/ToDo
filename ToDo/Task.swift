@@ -10,6 +10,7 @@ import SwiftUI
 struct Task: View, Identifiable {
     var id: Int
     var onSubmit: () -> Void
+    var onToggled: (Task) -> Void
     
     @State private var item: String = ""
     @State private var toggle: Bool = false
@@ -20,16 +21,16 @@ struct Task: View, Identifiable {
             Toggle("O", isOn: $toggle)
                 .toggleStyle(.button)
                 .padding(-10)
-            TextField(
-                "",
-                text: $item
-                
-            ) .focused($isFocused)
+                .onChange(of: toggle) {
+                    self.onToggled(self)
+                }
+            TextField("", text: $item)
+                .focused($isFocused)
                 .onAppear {
                     isFocused = true
                 }
                 .onSubmit {
-                    self.onSubmit() //referer til noe et annet sted
+                    self.onSubmit() 
                 }
         }
     }

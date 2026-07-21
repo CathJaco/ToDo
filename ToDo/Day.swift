@@ -33,10 +33,17 @@ struct Day: View {
         .frame(maxWidth: .infinity)
         .background(Color(red: 0.9, green: 0.5, blue: 0.3) .opacity(0.3))
     }
+    
     func addTask(){
-        let newTask = Task(id: self.id, onSubmit: addTask)
-        tasks.append(newTask)
-        id = id + 1
+        let newTask = Task(id: self.id, onSubmit: addTask, onToggled: removeTask)
+        self.tasks.append(newTask)
+        self.id = id + 1
+    }
+    
+    func removeTask(selectedTask: Task) {
+        tasks.removeAll { task in
+            task.id == selectedTask.id
+        }
     }
 }
 
