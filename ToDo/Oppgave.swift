@@ -7,21 +7,21 @@
 
 import SwiftUI
 
-struct Task: View, Identifiable {
+struct Oppgave: View, Identifiable {
     var id: Int
     var onSubmit: () -> Void
-    var onToggled: (Task) -> Void
+    var onToggled: (Oppgave) -> Void
     
     @State private var item: String = ""
-    @State private var toggle: Bool = false
+    @State var toggled: Bool = false
     @FocusState private var isFocused: Bool
     
     var body: some View {
         HStack() {
-            Toggle("O", isOn: $toggle)
+            Toggle("O", isOn: $toggled)
                 .toggleStyle(.button)
                 .padding(-10)
-                .onChange(of: toggle) {
+                .onChange(of: toggled) {
                     self.onToggled(self)
                 }
             TextField("", text: $item)

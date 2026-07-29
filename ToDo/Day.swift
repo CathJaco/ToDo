@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Day: View {
     var dayName: String
-    @State var tasks: [Task] = [] //Task(id: 0)
+    @State var oppgaver: [Oppgave] = []
     @State var id = 0
     
     var body: some View {
@@ -20,11 +20,11 @@ struct Day: View {
                 .font(.custom("AvenirNextCondensed-Regular", size: 16))
                 .fontWeight(.bold)
             VStack {
-                ForEach(tasks) { task in
-                    task
+                ForEach(oppgaver) { oppgave in
+                    oppgave
                 }
             }
-            Button("Add", systemImage: "plus", action: addTask)
+            Button("Add", systemImage: "plus", action: addOppgave)
             .labelStyle(.iconOnly)
             .frame(maxWidth: .infinity, alignment: .leading)
             .foregroundStyle(Color(red: 1.0, green: 1.0, blue: 1.0))
@@ -34,15 +34,22 @@ struct Day: View {
         .background(Color(red: 0.9, green: 0.5, blue: 0.3) .opacity(0.3))
     }
     
-    func addTask(){
-        let newTask = Task(id: self.id, onSubmit: addTask, onToggled: removeTask)
-        self.tasks.append(newTask)
+    func addOppgave(){
+        let newTask = Oppgave(id: self.id, onSubmit: addOppgave, onToggled: removeOppgave)
+        self.oppgaver.append(newTask)
         self.id = id + 1
     }
     
-    func removeTask(selectedTask: Task) {
-        tasks.removeAll { task in
-            task.id == selectedTask.id
+    func removeOppgave(selectedOppgave: Oppgave) {
+        Task {
+            try? await Task.sleep(for: .seconds(1))
+            
+            if selectedOppgave.toggled {
+                
+                oppgaver.removeAll { oppgave in
+                    oppgave.id == selectedOppgave.id
+                }
+            }
         }
     }
 }
