@@ -18,12 +18,14 @@ struct Oppgave: View, Identifiable {
     
     var body: some View {
         HStack() {
-            Toggle("O", isOn: $toggled)
-                .toggleStyle(.button)
-                .padding(-10)
-                .onChange(of: toggled) {
-                    self.onToggled(self)
-                }
+            // Toggle("O", isOn: $toggled)
+             //   .toggleStyle(.button)
+              //  .padding(-10)
+              //  .onChange(of: toggled) {
+              //      self.onToggled(self)
+              //  }
+            OOM_Toggle()
+                
             TextField("", text: $item)
                 .focused($isFocused)
                 .onAppear {
